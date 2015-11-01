@@ -15,6 +15,7 @@
     <title>Tutorial</title>
 </head>
 <body>
+	<div id="test" style="position:absolute;top:0px;right:0px;width:33.33%;height:100%;z-index:99;display:none;"></div>
 	<div id="template-up">
    		<nav class="w3-sidenav w3-imss3 menuHor" style="overflow: auto;direction: rtl;">
 			<header class="w3-container w3-imss3 w3-center">
@@ -23,26 +24,26 @@
         	<hr>
 
 			<ul class="w3-ul">
-        		<li><a href="#link1"><i class="w3-large fa fa-home"></i> Inicio</a></li>
-        		<li><a href="#link2"><i class="w3-large fa fa-bullseye"></i> Objetivo</a></li>
-        		<li><a href="#link3"><i class="w3-large fa fa-file-text-o"></i> Contextualización</a></li>
-        		<li><a href="#link3"><i class="w3-large fa fa-hospital-o"></i> Primer y segundo nivel</a></li>
-        		<li><a href="#pagina6"><i class="w3-large fa fa-circle"></i> Coordinador del Código Infarto</a></li> 
-        		<li><a href="#pagina8"><i class="w3-large fa fa-circle"></i> Personal de Vigilancia</a></li>    
-        		<li><a href="#pagina9"><i class="w3-large fa fa-circle"></i> Asistente médica de Urgencias</a></li> 
-        		<li><a href="#pagina10"><i class="w3-large fa fa-circle"></i> Personal de Camillería</a></li>     
-        		<li><a href="#pagina11"><i class="w3-large fa fa-circle"></i> Personal de Trabajo Social</a></li>  
-        		<li><a href="#pagina12"><i class="w3-large fa fa-circle"></i> Médico asignado al Triage</a></li>  
-        		<li><a href="#pagina13"><i class="w3-large fa fa-circle"></i> Médico de Urgencias de primer contacto responsable del Código</a></li>       
-        		<li><a href="#pagina17"><i class="w3-large fa fa-circle"></i> Enfermera general y/o Especialista (asignada al Código infarto)</a></li>           
-        		<li><a href="#pagina19"><i class="w3-large fa fa-hospital-o"></i><i class="w3-large fa fa-hospital-o"></i> Tercel nivel</a></li>           
-        		<li><a href="#pagina21"><i class="w3-large fa fa-circle"></i> Coordinador del Código infarto</a></li> 
-        		<li><a href="#pagina22"><i class="w3-large fa fa-circle"></i> Médico de Urgencias responsable del Código infarto en la Unidad Médica con sala de hemodinamia</a></li>
-        		<li><a href="#pagina26"><i class="w3-large fa fa-circle"></i> Cardiólogo(a) intervencionista responsable</a></li>
-        		<li><a href="#pagina33"><i class="w3-large fa fa-circle"></i> Médico responsable del Código infarto especialista en la UCI</a></li>
-     			<li><a href="#pagina33"><i class="w3-large fa fa-circle"></i> Paciente</a></li>   
-    			<li><a href="#pagina33"><i class="w3-large fa fa-circle"></i> Mejoras que se esperan con el Código infarto</a></li>
-        		<li><a href="#link3"><i class="w3-large fa fa-users"></i> Créditos</a></li>
+        		<li><a href="#"><i class="w3-large fa fa-home"></i> Inicio</a></li>
+        		<li><a href="#"><i class="w3-large fa fa-bullseye"></i> Objetivo</a></li>
+        		<li><a href="#"><i class="w3-large fa fa-file-text-o"></i> Contextualización</a></li>
+        		<li><a href="#"><i class="w3-large fa fa-hospital-o"></i> Primer y segundo nivel</a></li>
+        		<li><a href="#page6"><i class="w3-large fa fa-circle"></i> Coordinador del Código Infarto</a></li> 
+        		<li><a href="#page8"><i class="w3-large fa fa-circle"></i> Personal de Vigilancia</a></li>    
+        		<li><a href="#page9"><i class="w3-large fa fa-circle"></i> Asistente médica de Urgencias</a></li> 
+        		<li><a href="#page10"><i class="w3-large fa fa-circle"></i> Personal de Camillería</a></li>     
+        		<li><a href="#page11"><i class="w3-large fa fa-circle"></i> Personal de Trabajo Social</a></li>  
+        		<li><a href="#page12"><i class="w3-large fa fa-circle"></i> Médico asignado al Triage</a></li>  
+        		<li><a href="#page13"><i class="w3-large fa fa-circle"></i> Médico de Urgencias de primer contacto responsable del Código</a></li>       
+        		<li><a href="#page17"><i class="w3-large fa fa-circle"></i> Enfermera general y/o Especialista (asignada al Código infarto)</a></li>           
+        		<li><a href="#page19"><i class="w3-large fa fa-hospital-o"></i><i class="w3-large fa fa-hospital-o"></i> Tercel nivel</a></li>           
+        		<li><a href="#page21"><i class="w3-large fa fa-circle"></i> Coordinador del Código infarto</a></li> 
+        		<li><a href="#page22"><i class="w3-large fa fa-circle"></i> Médico de Urgencias responsable del Código infarto en la Unidad Médica con sala de hemodinamia</a></li>
+        		<li><a href="#page26"><i class="w3-large fa fa-circle"></i> Cardiólogo(a) intervencionista responsable</a></li>
+        		<li><a href="#page33"><i class="w3-large fa fa-circle"></i> Médico responsable del Código infarto especialista en la UCI</a></li>
+     			<li><a href="#page33"><i class="w3-large fa fa-circle"></i> Paciente</a></li>   
+    			<li><a href="#page33"><i class="w3-large fa fa-circle"></i> Mejoras que se esperan con el Código infarto</a></li>
+        		<li><a href="#"><i class="w3-large fa fa-users"></i> Créditos</a></li>
       		</ul>
     	</nav>
 
@@ -53,7 +54,7 @@
 					<br>
 				</div>
                 <nav id="nav">
-					<button id="btnMenu"  type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><i class="fa fa-bars"></i></button>
+					<button id="btnMenu" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><i class="fa fa-bars"></i></button>
                 </nav>
             </div>
         </header>
@@ -141,26 +142,66 @@
 	        goPage(0);
 	    }
 
-    	/*$('#btnMenu').click(function() {
-    		if (menuHor.css('display') == 'block') {
-    			menuHor.css('display', 'none');
-       		} else {
-    			menuHor.css('display', 'block');
-       		}
-    	});*/
+    	$('#btnMenu').click(function() {
+    		btnMenu();
+    	});
+
+    	$('.w3-ul li').click(function(e) {
+    		e.preventDefault();    		
+    		var href = $('a', this).attr('href');    		
+    		href = href.substr(1, href.length -1);
+    		if (href.length == 0) {
+    			alert('No tiene link');
+    		} else {    			
+
+    			var index = findWithAttr(course.pages, 'url', href + '.html');
+
+    			//alert('href>>' + href);
+    			//alert("index>>" + index);    			
+
+    			if (index != undefined) {    				
+    				goPage(index);    	
+    				btnMenu();
+    			} else {
+    				alert('undefined');
+    			}
+    		}
+    	});
 
 	    $('#btnNext').click(function(){
-	        nextPage();
+	        if ((currentPage + 1) < course.pages.length) {
+	        	++currentPage;
+	        	loadContent();
+	        } else {
+	        	//console.log('Error - Ya no hay más páginas después');
+	        }
 	    });
 
 	    $("#btnPrev").click(function(){
-	        prevPage();
+	        if (currentPage > 0) {
+	        	--currentPage;
+	        	loadContent();
+	        } else {
+	        	//console.log('Error - Ya no hay más páginas antes');
+	        }
 	    });    
 
 	    $(window).resize(function(){
 	    	resize();
-	    });
+	    });	    
+
+	    $('div#test').click(function() {
+	    	btnMenu();
+	    });	    
 	});
+
+	function findWithAttr(array, attr, value) {
+	    for (var i = 0, len = array.length; i < len; i++) {
+	        if (array[i][attr] === value) {
+	        	return i;
+	        }
+	    }
+	}
 
 	function resize() {		
 	    var headerHeight = $('#template-up').height();
@@ -169,6 +210,16 @@
 	    $('#main').css('height', mainHeight);
 	    $('#main').css('margin-top', headerHeight);
 	}
+
+	function btnMenu() {
+		if (menuHor.is(":hidden")) {
+			menuHor.show(0);
+			$('div#test').show(0);
+		} else {
+			menuHor.hide(0);
+			$('div#test').hide(0);
+		}
+	}	
 
 	function loadContent() {
 	    
@@ -207,26 +258,6 @@
 
 		if (currentPage != 0) {
 	        goPage(0);
-		}
-	}
-
-	function nextPage() {
-
-		if ((currentPage + 1) < course.pages.length) {
-			currentPage++;
-			loadContent();
-		} else {
-			//console.log('Error - Ya no hay más páginas después');
-		}
-	}
-
-	function prevPage() {
-
-		if (currentPage > 0) {
-			currentPage--;
-			loadContent();
-		} else {
-			//console.log('Error - Ya no hay más páginas antes');
 		}
 	}
 
