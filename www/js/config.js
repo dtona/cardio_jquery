@@ -1,6 +1,6 @@
 /* Copyright Irek Mendieta 2014. contact: irekmv@gmail.com */
 var course = new Object();
-var conection = false;
+var connection = false;
 var mostrarAlertas = false;
 var contentPath = "content/";
 var navegationBlock = false;
@@ -43,3 +43,4 @@ course.pages = [
     {title: "Tutorial - 36", url: "page36.html", navegacion: true, menu: true}
     
 ];
+var lastPage = course.pages.length - 1;

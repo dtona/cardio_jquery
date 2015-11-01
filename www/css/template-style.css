@@ -1,5 +1,11 @@
-body,html {
-    /*overflow: hidden;*/
+div#layer {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 33.33%;
+    height: 100%;
+    z-index: 99;
+    display: none;
 }
 
 .menuHor {
@@ -62,6 +68,7 @@ body {
 #btnMenu {
     margin: 3px 0 0 0;
     float: right;
+    display: none;
 }
 
 #btnPrev,#btnNext {
@@ -71,6 +78,7 @@ body {
 
 #btnPrev {
     float: left;
+    display: none;
 }
 
 #course_logo {
@@ -140,11 +148,7 @@ body {
     .logo {
         margin-top: 5px;
         height: 48px;
-    }
-
-    #btnPrev,#btnNext{
-    
-    }
+    }    
 
     #btnMenu {
         margin-top: 12px;

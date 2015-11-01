@@ -15,7 +15,9 @@
     <title>Tutorial</title>
 </head>
 <body>
-	<div id="test" style="position:absolute;top:0px;right:0px;width:33.33%;height:100%;z-index:99;display:none;"></div>
+
+	<div id="layer"></div>
+
 	<div id="template-up">
    		<nav class="w3-sidenav w3-imss3 menuHor" style="overflow: auto;direction: rtl;">
 			<header class="w3-container w3-imss3 w3-center">
@@ -54,15 +56,11 @@
 					<br>
 				</div>
                 <nav id="nav">
-					<button id="btnMenu" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal"><i class="fa fa-bars"></i></button>
+					<button id="btnMenu" type="button" class="btn btn-warning"><i class="fa fa-bars"></i></button>
                 </nav>
             </div>
         </header>
     </div>
-
-    <!--<div id="main">
-		<div id="content"></div>
-    </div>-->
 
     <div id="main"></div>
 
@@ -103,210 +101,9 @@
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/TweenMax.min.js"></script>
 	<script src="js/config.js"></script>
+	<script src="js/index.js"></script>
     <!--<script src="js/api-conect.js"></script>-->
     <!--<script src="js/tracking.js"></script>-->
-    <!--<script src="js/bootstrap.min.js"></script>-->
-	<script>
-	var currentPage = 0,
-	    lastPage = 0,
-	    curseStatus = '',
-	    curseCompleted = false,
-	    btnNext,
-	    btnPrev,
-	    content,
-	    menuHor;
-
-	$(function() {
-
-		resize();
-
-	    btnNext = $('#btnNext');
-	    btnPrev = $('#btnPrev');    
-	    
-	    btnNext.hide(0);
-	    btnPrev.hide(0);
-
-	    content = $('#main');
-    	menuHor = $('.menuHor:first');    	
-
-	    if (conection) {
-	        
-	        if (getAPI()) {
-	            checkProgress();
-	        } else {
-	            errorAPI();
-	            goPage(0);
-	        }
-
-	    } else {
-	        goPage(0);
-	    }
-
-    	$('#btnMenu').click(function() {
-    		btnMenu();
-    	});
-
-    	$('.w3-ul li').click(function(e) {
-    		e.preventDefault();    		
-    		var href = $('a', this).attr('href');    		
-    		href = href.substr(1, href.length -1);
-    		if (href.length == 0) {
-    			alert('No tiene link');
-    		} else {    			
-
-    			var index = findWithAttr(course.pages, 'url', href + '.html');
-
-    			//alert('href>>' + href);
-    			//alert("index>>" + index);    			
-
-    			if (index != undefined) {    				
-    				goPage(index);    	
-    				btnMenu();
-    			} else {
-    				alert('undefined');
-    			}
-    		}
-    	});
-
-	    $('#btnNext').click(function(){
-	        if ((currentPage + 1) < course.pages.length) {
-	        	++currentPage;
-	        	loadContent();
-	        } else {
-	        	//console.log('Error - Ya no hay más páginas después');
-	        }
-	    });
-
-	    $("#btnPrev").click(function(){
-	        if (currentPage > 0) {
-	        	--currentPage;
-	        	loadContent();
-	        } else {
-	        	//console.log('Error - Ya no hay más páginas antes');
-	        }
-	    });    
-
-	    $(window).resize(function(){
-	    	resize();
-	    });	    
-
-	    $('div#test').click(function() {
-	    	btnMenu();
-	    });	    
-	});
-
-	function findWithAttr(array, attr, value) {
-	    for (var i = 0, len = array.length; i < len; i++) {
-	        if (array[i][attr] === value) {
-	        	return i;
-	        }
-	    }
-	}
-
-	function resize() {		
-	    var headerHeight = $('#template-up').height();
-	    var footerHeight = $('#template-down').outerHeight();
-	    var mainHeight = $(window).height() - headerHeight - footerHeight;
-	    $('#main').css('height', mainHeight);
-	    $('#main').css('margin-top', headerHeight);
-	}
-
-	function btnMenu() {
-		if (menuHor.is(":hidden")) {
-			menuHor.show(0);
-			$('div#test').show(0);
-		} else {
-			menuHor.hide(0);
-			$('div#test').hide(0);
-		}
-	}	
-
-	function loadContent() {
-	    
-	    content.html('<iframe name="com" id="com" src="' + contentPath + course.pages[currentPage].url + '" frameborder="0" scrolling="no" border="0"></iframe>');
-	    //var iframeHeight = parseInt($("iframe#com").css("height"), 10);
-	    //alert(iframeHeight);
-	    //iframeHeight = iframeHeight - 36;	    
-	    //$("iframe#com").css("height", iframeHeight + "px");
-	    //alert($("iframe#com").css("height"));
-	    //content.html('<object width="100%" height="500px" data="' + contentPath + course.pages[currentPage].url + '"></object>');
-	    //$('title').text(course.pages[currentPage].title);
-	    //$("#com").mCustomScrollbar();
-
-	    updateTracking();
-	}
-
-	/*function checkProgress() {
-	    //Función para revisar el avance
-	}*/
-
-	function goPage(pageID) {
-
-	    if (currentPage != pageID) {
-	        lastPage = currentPage;
-		}
-
-	    currentPage = pageID;
-	    loadContent();
-	}
-
-	function reLoad() {
-	    goPage(currentPage);
-	}
-
-	function goHome() {
-
-		if (currentPage != 0) {
-	        goPage(0);
-		}
-	}
-
-	function updateTracking() {
-	    
-	    if (conection) {
-	        // enviar aquí el "lesson_location"
-	        if (!curseCompleted) {
-	            if (currentPage == course.pages.length - 1) {
-	                
-	                // enviar aquí el "completed"
-	                curseCompleted = true;
-
-	            } else {
-	                // enviar aquí el "incomplete"
-	            }
-	        }   
-	        
-	        //var success = lmsCall("Commit");
-	        //if (!success){
-	        //    errorAPI();
-	        //}
-	    }
-
-	    //Actualización de los botones de navegación
-
-	    if (currentPage < course.pages.length - 1) {
-
-	        if (!navegationBlock) {
-	            $('#btnNext').show(0);
-	        }
-
-	    } else {
-	        $('#btnNext').hide(0);
-	    }
-
-	    if (currentPage >= 1) {
-	        $('#btnPrev').show(0);
-	    } else {
-	        $('#btnPrev').hide(0);
-	    }
-	}
-
-	function errorAPI(){
-	    if (mostrarAlertas) {
-	        alert('Se ha detectado un problema de comunicación con el LMS.\nSu progreso no podrá seguir siendo registrado.\nPor favor cierre el curso y vuelva a intentarlo.');
-	    }
-	    //console.log('Error de conexión');
-	}			
-	</script>
+    <!--<script src="js/bootstrap.min.js"></script>-->	
 </body>
 </html>
