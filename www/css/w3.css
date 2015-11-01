@@ -86,7 +86,7 @@ ul.w3-ul li:last-child{border-bottom:none}
 .w3-topnav a,.w3-sidenav a,.w3-dropnav a{text-decoration:none !important}
 .w3-topnav a{padding:0 8px;border-bottom:3px solid transparent;-webkit-transition:all 0.3s ease;-moz-transition:all 0.3s ease;-o-transition:all 0.3s ease;transition:all 0.3s ease;}
 .w3-topnav a:hover{border-bottom:3px solid #fff}
-.w3-sidenav{height:100%;width: 300px; position:fixed;z-index:1;overflow:auto}
+.w3-sidenav{height:100%;/*width: 300px;*/width: 66.66%; position:fixed;z-index:100;overflow:auto}
 .w3-opennav,.w3-closenav{color:inherit}
 .w3-opennav:hover,.w3-closenav:hover{cursor:pointer;opacity:0.8}
 .w3-sidenav a{padding:4px 16px}
