@@ -239,8 +239,6 @@ function updateTracking() {
         if (currentPage == lastPage) {              
             localStorage.courseCompleted = 'true';
             $('#btnMenu').show(0);            
-        } else {
-            localStorage.courseCompleted = 'false';
         }
     //}
     
@@ -255,7 +253,11 @@ function updateTracking() {
         btnNext.hide(0);
     }
 
-    if (currentPage > 0 && localStorage.courseCompleted == 'true') {
+    if (typeof localStorage.courseCompleted != 'undefined' && localStorage.courseCompleted == 'true') {
+        $('#btnMenu').show(0);
+    }
+
+    if (currentPage > 0 && typeof localStorage.courseCompleted != 'undefined' && localStorage.courseCompleted == 'true') {        
         btnPrev.show(0);
     } else {
         btnPrev.hide(0);
