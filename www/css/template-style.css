@@ -36,9 +36,9 @@ body {
     box-shadow: 0px 0px 5px #000;
 }
 
-#template-down {
+div#template-down {
     position: fixed;
-    z-index: 50;
+    z-index: 40;
     bottom: 0;
     background-color: #fea332 !important;    
     width: 100%;    
