@@ -233,18 +233,18 @@ body {
 
 .bg1 {
     background: url(../images/bg1.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
+    /*-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 .bg2 {
     background: url(../images/bg2.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
+    /*-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 .nota {
